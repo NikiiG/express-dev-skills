@@ -2,7 +2,9 @@
 
 module.exports = {
     index,
-    show
+    show,
+    new: newSkill,
+    create
   };
  
  // Convention is to name the model in uppercase and singular
@@ -22,3 +24,14 @@ function index(req, res) {
     });
   }
 
+  function newSkill(req, res) {
+    res.render('skills/new', { title: 'New Skill' });
+  }
+	
+  function create(req, res) {
+    console.log(req.body);
+    // The model is responsible for creating data
+    // Todo.create(req.body);
+    // Do a redirect anytime data is changed
+    res.redirect('/skills');
+  }

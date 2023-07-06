@@ -11,8 +11,13 @@ var router = express.Router();
 // GET /skills
 router.get('/', skillsCtrl.index);
 
+// GET /todos/new
+router.get('/new', skillsCtrl.new);
+
 // GET /skills/:id
 router.get('/:id', skillsCtrl.show);
 
+// POST /todos
+router.post('/', skillsCtrl.create);
 
 module.exports = router;
