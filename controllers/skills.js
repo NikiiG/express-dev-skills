@@ -1,7 +1,8 @@
 // controllers/skills.js
 
 module.exports = {
-    index
+    index,
+    show
   };
  
  // Convention is to name the model in uppercase and singular
@@ -10,6 +11,12 @@ module.exports = {
 function index(req, res) {
     res.render('skills/index', {
       skills: Skill.getAll()
+    });
+  }
+
+  function show(req, res) {
+    res.render('skills/show', {
+      skill: Skill.getOne(req.params.id),
     });
   }
 
